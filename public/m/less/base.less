@@ -1,0 +1,115 @@
+//1.公共的变量
+@main-color: #006699;
+
+
+//2.样式初始化(不需要写那么多) MUI 已经写了一些了
+html {
+    font-size: 26.66667vw;
+}
+
+body {
+    font-size: .14rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+
+
+
+//3.公共样式
+
+
+//3.1头部是公共样式所以要在base里面写
+
+#header {
+    display: flex;
+    background-color: @main-color;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .left {
+        width: .45rem;
+        height: .45rem;
+    }
+
+    .center {
+        flex: 1;
+        text-align: center;
+        // line-height: .45rem;
+
+        //因为h4 在mui 自带了行高
+        h4 {
+            line-height: .45rem;
+            font-weight: normal;
+        }
+    }
+
+    .right {
+        width: .45rem;
+        height: .45rem;
+        line-height: .45rem;
+    }
+}
+
+
+#main {
+    height: 100vh;
+    padding: .45rem 0;
+    position: relative;
+
+    .mui-scroll-wrapper {
+        position: relative;
+        height: 100%;
+
+        .swper-container {
+            height: 100%;
+
+            .swiper-slide {
+                height: auto;
+            }
+        }
+    }
+
+}
+
+
+
+/* 底部 */
+#footer {
+    background-color: @main-color;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: .45rem;
+        line-height: 1;
+
+        &.active {
+            color: orange;
+        }
+
+    }
+
+}
